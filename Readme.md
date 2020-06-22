@@ -60,11 +60,11 @@ To handle this issue, we add “virtual replicas” for caches. TInstead of mapp
 
 If the hash function “mixes well,” as the number of replicas increases, the keys 
 will be more balanced. This is 
-implemented by weight paramter when initializing hash ring.
+implemented by **weight** parameter when initializing hash ring.
 
 ## Usage
 
-```
+```python
 from hashring import ConsistentHashing
 
 # create a consistent hash ring with 5 replicas for each node(server)
