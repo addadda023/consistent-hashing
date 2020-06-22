@@ -1,3 +1,5 @@
+![](https://github.com/addadda023/consistent-hashing/workflows/Python%20application/badge.svg)
+
 # Consistent Hashing
 
 Distributed Hash Table is one of the fundamental components used in distributed systems.
