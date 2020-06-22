@@ -15,7 +15,7 @@ class TestConsistentHashing(unittest.TestCase):
         return ring
 
     def test_add_node(self):
-        ring = self.create_hashring(weight=5, num_nodes=10)
+        ring = self.create_hash_ring(weight=5, num_nodes=10)
         # Before adding node
         self.assertEqual(ring.get_node('2'), 'node5')
         # Add node
@@ -24,7 +24,7 @@ class TestConsistentHashing(unittest.TestCase):
         self.assertEqual(ring.get_node('2'), 'node5')
 
     def test_remove_node(self):
-        ring = self.create_hashring(weight=5, num_nodes=10)
+        ring = self.create_hash_ring(weight=5, num_nodes=10)
         # Before removing node
         self.assertEqual(ring.get_node('2'), 'node5')
         ring.remove_node('node_name5')
