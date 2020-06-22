@@ -1,17 +1,15 @@
 import unittest
 from hashring import ConsistentHashing
-import random
 
 
 class TestConsistentHashing(unittest.TestCase):
 
-    def create_hash_ring(self, weight=10, num_nodes=10):
+    def create_hash_ring(self, weight, num_nodes):
         """Returns instantiated hash ring object"""
         ring = ConsistentHashing(weight=weight)
         for index in range(1, num_nodes + 1):
             ring.add_node(node_name='node_name{}'.format(index), node='node{}'.format(index))
 
-        self.assertEqual(ring.get_node('1983'), 'node5')
         return ring
 
     def test_add_node(self):
@@ -30,3 +28,6 @@ class TestConsistentHashing(unittest.TestCase):
         ring.remove_node('node_name5')
         # After removing node, key 2 should be served by node9
         self.assertEqual(ring.get_node('2'), 'node9')
+
+
+
