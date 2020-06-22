@@ -38,7 +38,8 @@ Here’s how consistent hashing works:
 * To map a key to a server:
   * Hash it to a single integer.
   * Move clockwise on the ring until finding the first cache it encounters.
-  * That cache is the one that contains the key. See animation below as an example: key1 maps to cache A; key2 maps to cache C.
+  * That cache is the one that contains the key. 
+ 
  
 ![Hash Ring](/static/hash_ring.png)
 
