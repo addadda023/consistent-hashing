@@ -80,3 +80,13 @@ ring.add_node(node_name='node2', node=redis.StructRedis(host='host2'))
 client = ring.get_node('some_node_name')
 data = client.get('some key')
 ```
+
+## How randomly uniformly distributed are requests? 
+Increasing number of replicas helps randomly uniformly distribute requests. Below chart was generated using:
+* 20 servers.
+* 10,000 total requests.
+* 1 to 150 replica for 20 servers. 
+
+![](/static/std_dev_vs_replicas.png)
+
+Increasing number of replicas generally helps to randomly distribute but there is diminishing returns after certain threshold.
