@@ -87,6 +87,6 @@ Below chart was generated using:
 * 10,000 total requests.
 * 1 to 200 virtual replicas for each of the 20 servers. 
 
-![](/static/std_dev_vs_replicas.png)
-
 Increasing number of replicas generally helps to randomly distribute requests but there is diminishing returns after certain threshold.
+
+![](/static/std_dev_vs_replicas.png)
