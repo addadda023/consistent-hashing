@@ -45,6 +45,8 @@ class ConsistentHashing:
         that of the given key is returned."""
         hash_ = self._hash(key)
         index = bisect.bisect(self._keys, hash_)
+        if index == len(self._keys):
+            index = 0
         return self._nodes[self._keys[index]]
 
 
