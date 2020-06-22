@@ -61,3 +61,20 @@ To handle this issue, we add “virtual replicas” for caches. TInstead of mapp
 If the hash function “mixes well,” as the number of replicas increases, the keys 
 will be more balanced. This is 
 implemented by weight paramter when initializing hash ring.
+
+## Usage
+
+```
+from hashring import ConsistentHashing
+
+# create a consistent hash ring with 5 replicas for each node(server)
+ring = ConsistentHashing(weight=5)
+
+# you can use whatever node you want, such as Redis clients
+import redis
+ring.add_node(node_name='node1', node=redis.StrictRedis(host='host1'))
+ring.add_node(node_name='node2', node=redis.StructRedis(host='host2'))
+
+client = ring.get_node('some_node_name')
+data = client.get('some key')
+```
