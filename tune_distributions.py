@@ -1,5 +1,4 @@
 from hashring import ConsistentHashing
-from utils import create_hash_ring
 import collections
 import random
 import math
