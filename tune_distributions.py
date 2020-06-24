@@ -11,7 +11,7 @@ def std_dev(population):
 
 
 def create_hash_ring(weight, num_nodes):
-    """Returns instantiated hash ring object"""
+    """Returns instantiated empty hash ring object"""
     ring = ConsistentHashing(weight=weight)
     for index in range(1, num_nodes + 1):
         ring.add_node(node_name='node_name{}'.format(index), node='node{}'.format(index))

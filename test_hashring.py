@@ -15,19 +15,19 @@ class TestConsistentHashing(unittest.TestCase):
     def test_add_node(self):
         ring = self.create_hash_ring(weight=5, num_nodes=10)
         # Before adding node
-        self.assertEqual(ring.get_node('2'), 'node5')
+        self.assertEqual(ring.get_node('2')[1], 'node5')
         # Add node
         ring.add_node(node_name='node_name{}'.format(11), node='node{}'.format(11))
         # After adding new node
-        self.assertEqual(ring.get_node('2'), 'node5')
+        self.assertEqual(ring.get_node('2')[1], 'node5')
 
     def test_remove_node(self):
         ring = self.create_hash_ring(weight=5, num_nodes=10)
         # Before removing node
-        self.assertEqual(ring.get_node('2'), 'node5')
+        self.assertEqual(ring.get_node('2')[1], 'node5')
         ring.remove_node('node_name5')
         # After removing node, key 2 should be served by node9
-        self.assertEqual(ring.get_node('2'), 'node9')
+        self.assertEqual(ring.get_node('2')[1], 'node9')
 
 
 
