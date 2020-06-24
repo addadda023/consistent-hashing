@@ -25,7 +25,7 @@ class ConsistentHashing:
         for hash_ in self._node_list(node_name):
             if hash_ in self._nodes:
                 raise ValueError('Node name {} is already present'.format(node_name))
-            self._nodes[hash_] = node
+            self._nodes[hash_] = (node_name, node)
             # Insert hash to keys
             bisect.insort(self._keys, hash_)
 
