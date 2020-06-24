@@ -77,7 +77,7 @@ import redis
 ring.add_node(node_name='node1', node=redis.StrictRedis(host='host1'))
 ring.add_node(node_name='node2', node=redis.StructRedis(host='host2'))
 
-client = ring.get_node('some_node_name')
+client = ring.get_node('some key')
 data = client.get('some key')
 ```
 
