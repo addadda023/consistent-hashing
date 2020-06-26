@@ -1,7 +1,0 @@
-docker pull redis
-
--- run redis instance 1
-docker run -d -p 6379:6379 redis
-
--- run redis instance 2
-docker run -d -p 7001:6379 redis
