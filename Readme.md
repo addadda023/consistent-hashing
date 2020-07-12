@@ -9,7 +9,7 @@ Hash Tables need a key, a value, and a hash function where hash function maps th
 `index = hash_function(key)`
 
 Suppose we are designing a distributed caching system. Given ‘n’ cache servers, an intuitive hash
- function would be ‘key % n’. It is simple and commonly used. But it has two major drawbacks:
+ function would be ‘key % n’. It is simple and commonly used. But it has two major drawbacks: 
 
 It is NOT horizontally scalable. Whenever a new cache host is added to the system, all existing mappings are broken.
  It will be a pain point in maintenance if the caching system contains lots of data. 
@@ -22,7 +22,7 @@ In such situations, consistent hashing is a good way to improve the caching syst
 ## What is Consistent Hashing? 
 Consistent hashing is a very useful strategy for distributed caching systems and DHTs. 
 It allows us to distribute data across a cluster in such a way that will minimize 
-reorganization when nodes are added or removed. Hence, the caching system will be easier to scale up or scale down.
+reorganization when nodes are added or removed. Hence the caching system will be easier to scale up or scale down.
 
 In Consistent Hashing, when the hash table is resized (e.g. a new cache host is added to the system), 
 only ‘k/n’ keys need to be remapped where ‘k’ is the total number of keys and ‘n’ is the total number of servers.
